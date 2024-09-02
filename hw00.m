@@ -17,9 +17,14 @@ classdef hw00
             if m < 0
                 error('m must be a non-negative integer')
             else 
-                a_m = inf; % Write your code here
+                if m == 0
+                    a_m = 0;
+                elseif m == 1 || m == 2
+                        a_m = 1;
+                else
+                    a_m = hw00.p1(m-1) + hw00.p1(m-2) + hw00.p1(m-3);
+                end
             end
-
         end
 
         function det_A = p2(A)
@@ -30,14 +35,14 @@ classdef hw00
             if size(A,1) ~= size(A,2)
                 error('A must be a square matrix')
             else
-                det_A = inf;% Write your code here, note when you call p2 function inside your function, you need to call it like this: hw00.p2(B), where B is a matrix.
+                det_A = det(A);
             end
         end
 
         function p3()
             % This function should have a run time about 1 second.
             % :return: no returns
-
+            pause(1);
             % Write your code here
         end
     end
