@@ -17,7 +17,13 @@ classdef hw00
             if m < 0
                 error('m must be a non-negative integer')
             else 
-                a_m = inf; % Write your code here
+                if m == 0
+                    a_m = 0;
+                elseif m == 1 || m == 2
+                    a_m = 1;
+                else
+                    a_m = p1(m-1) + p1(m-2) + p1(m-3);
+                end
             end
 
         end
